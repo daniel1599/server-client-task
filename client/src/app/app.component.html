@@ -1,0 +1,42 @@
+<div class="container" input (keyup.esc)="onKeyUp($event)">
+  <div class="content">
+    <h1 class="headerText">Welcome to the Classes presentation!!!</h1>
+    <p>
+      <button type="button" name="show1" (click)="getClass1()">Show Class 1 info</button><span>   </span> <button type="button" name="show2" (click)="getClass2()">Show Class 2 info</button>
+      <div *ngIf="showTable" class="table-center"   (clickOutside)="onClickedOutside($event) ">
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Class ID</th>
+              <th>Teacher's first name</th>
+              <th>Teacher's last name</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>{{selectedClass.id}}</td>
+              <td>{{selectedClass.teacherFirstName}}</td>
+              <td>{{selectedClass.teacherLastName}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+        <span></span> 
+        <table>
+          <thead>
+            <tr>              
+              <th>Students' names</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let stu of studentsNameList">
+              <td>{{stu}}</td>
+          </tr>
+          
+          </tbody>
+        </table>
+     </div>
+  </div>
+</div>
